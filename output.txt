@@ -1,0 +1,46 @@
+=== Elimination count is 2 ===
+Remaining survivors: 1-Ziru, 2-Marshall, 3-Sophie, 4-Mohamed, 5-Unumergen, 6-Anthony, 7-Angel, 8-Lukas, 9-Phoung, 10-Maharshi, 11-Mya, 12-Yunfeng
+
+Continue elimination? <press enter>
+Marshall eliminated!
+Remaining survivors: 1-Sophie, 2-Mohamed, 3-Unumergen, 4-Anthony, 5-Angel, 6-Lukas, 7-Phoung, 8-Maharshi, 9-Mya, 10-Yunfeng, 11-Ziru
+
+Continue elimination? <press enter>
+Mohamed eliminated!
+Remaining survivors: 1-Unumergen, 2-Anthony, 3-Angel, 4-Lukas, 5-Phoung, 6-Maharshi, 7-Mya, 8-Yunfeng, 9-Ziru, 10-Sophie
+
+Continue elimination? <press enter>
+Anthony eliminated!
+Remaining survivors: 1-Angel, 2-Lukas, 3-Phoung, 4-Maharshi, 5-Mya, 6-Yunfeng, 7-Ziru, 8-Sophie, 9-Unumergen
+
+Continue elimination? <press enter>
+Lukas eliminated!
+Remaining survivors: 1-Phoung, 2-Maharshi, 3-Mya, 4-Yunfeng, 5-Ziru, 6-Sophie, 7-Unumergen, 8-Angel
+
+Continue elimination? <press enter>
+Maharshi eliminated!
+Remaining survivors: 1-Mya, 2-Yunfeng, 3-Ziru, 4-Sophie, 5-Unumergen, 6-Angel, 7-Phoung
+
+Continue elimination? <press enter>
+Yunfeng eliminated!
+Remaining survivors: 1-Ziru, 2-Sophie, 3-Unumergen, 4-Angel, 5-Phoung, 6-Mya
+
+Continue elimination? <press enter>
+Sophie eliminated!
+Remaining survivors: 1-Unumergen, 2-Angel, 3-Phoung, 4-Mya, 5-Ziru
+
+Continue elimination? <press enter>
+Angel eliminated!
+Remaining survivors: 1-Phoung, 2-Mya, 3-Ziru, 4-Unumergen
+
+Continue elimination? <press enter>
+Mya eliminated!
+Remaining survivors: 1-Ziru, 2-Unumergen, 3-Phoung
+
+Continue elimination? <press enter>
+Unumergen eliminated!
+Remaining survivors: 1-Phoung, 2-Ziru
+
+Continue elimination? <press enter>
+Ziru eliminated!
+Phoung is the last survivor!
