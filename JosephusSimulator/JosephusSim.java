@@ -119,4 +119,41 @@ public class JosephusSim {
         // decrease the number of people left
         size--;
     }
+
+    // check if only one person is left
+    public boolean isOver() {
+        return size == 1;
+    }
+
+    // show everyone left in the circle
+    public String toString() {
+
+        // check if the list is empty
+        if (size == 0) {
+            return "No survivors.";
+        }
+
+        // show the last person standing
+        if (isOver()) {
+            return first.name + " is the last survivor!";
+        }
+
+        String result = "Remaining survivors: ";
+        PersonNode current = first;
+
+        // go through everyone still in the circle
+        for (int i = 1; i <= size; i++) {
+            result += i + "-" + current.name;
+
+            // add commas between names
+            if (i < size) {
+                result += ", ";
+            }
+
+            // move to the next person
+            current = current.next;
+        }
+
+        return result;
+    }
 }
