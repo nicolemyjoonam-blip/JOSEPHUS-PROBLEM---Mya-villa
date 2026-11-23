@@ -6,15 +6,13 @@
  *
  * Description:
  * Simulates the Josephus Problem using a linked list.
- * Names are read from a text file and stored in
- * PersonNode objects.
- *
- * Commit 2: Read names and build a singly linked list.
+ * Reads names from a file and puts them into a circle.
  */
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Random;
 
 public class JosephusSim {
 
@@ -22,12 +20,7 @@ public class JosephusSim {
     private int size;
     private int eliminationCount;
 
-    /**
-     * Reads names from a file and creates a
-     * singly linked list of PersonNode objects.
-     *
-     * @param fileName the input file containing names
-     */
+    // read names from file and make the linked list
     public JosephusSim(String fileName) {
         first = null;
         size = 0;
@@ -37,10 +30,13 @@ public class JosephusSim {
         try {
             Scanner input = new Scanner(new File(fileName));
 
+            // go through each name in the file
             while (input.hasNextLine()) {
                 String name = input.nextLine().trim();
 
                 if (!name.isEmpty()) {
+
+                    // make a new node for each person
                     PersonNode newNode = new PersonNode(name);
 
                     if (first == null) {
@@ -49,6 +45,7 @@ public class JosephusSim {
                         last.next = newNode;
                     }
 
+                    // update last node and size
                     last = newNode;
                     size++;
                 }
@@ -61,5 +58,28 @@ public class JosephusSim {
                 "File not found: " + fileName, e
             );
         }
+
+        // check if the file is empty
+        if (size == 0) {
+            throw new IllegalArgumentException(
+                "The file must contain at least one name."
+            );
+        }
+
+        // connect last node back to the first
+        last.next = first;
+
+        // pick a random elimination count
+        Random random = new Random();
+
+        eliminationCount = random.nextInt(
+            Math.max(1, size / 2)
+        ) + 1;
+
+        // print elimination count
+        System.out.println(
+            "=== Elimination count is " +
+            eliminationCount + " ==="
+        );
     }
 }
