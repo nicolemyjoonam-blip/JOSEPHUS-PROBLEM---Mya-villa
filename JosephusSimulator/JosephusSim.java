@@ -1,49 +1,65 @@
-import java.util.*;
-import java.io.*;
+
+/*
+ * Name: Mya Maxine Villa
+ * Course: CS 143 - Fall 2026
+ * Assignment: Program #5 - Josephus Problem
+ *
+ * Description:
+ * Simulates the Josephus Problem using a linked list.
+ * Names are read from a text file and stored in
+ * PersonNode objects.
+ *
+ * Commit 2: Read names and build a singly linked list.
+ */
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class JosephusSim {
-   private PersonNode front;      // a PersonNode pointer that tracks first node in the list
-   private int size;              // the number of people in the circle
-   private int eliminationCount;  // the number to count to for elimination       
 
-   public JosephusSim(String fileName) {
-      try {
-         // load names from the file in order, generating a singly linked list of PersonNodes
-         Scanner file = new Scanner(new File(fileName));
-         
-         // make the ring circular by attaching last node's next to front
-         
-         // generate, print, and save the random elimination count
+    private PersonNode first;
+    private int size;
+    private int eliminationCount;
 
-      } catch (FileNotFoundException e) {
-         System.out.println("Something went wrong with " + fileName);
-      }
-   }
-   
-   // optional helper method for constructing the circle
-   private void add(String val) {
-   }
-   
-   public void eliminate() {
-      // count to the elimination count
-      
-      // print who will be eliminated
-      
-      // eliminate the person and update "front" of the circle and size
+    /**
+     * Reads names from a file and creates a
+     * singly linked list of PersonNode objects.
+     *
+     * @param fileName the input file containing names
+     */
+    public JosephusSim(String fileName) {
+        first = null;
+        size = 0;
 
-   }
-   
-   public boolean isOver() {
-      // check if there's only one person left in the circle
-      return false;
-   }
-   
-   public String toString() {
-      // if there's only one person left, print them as the last survivor
-      
-      // if many, print survivors (watch out for infinite loop since list is circular)
+        PersonNode last = null;
 
-      return "";
-   }
+        try {
+            Scanner input = new Scanner(new File(fileName));
 
+            while (input.hasNextLine()) {
+                String name = input.nextLine().trim();
+
+                if (!name.isEmpty()) {
+                    PersonNode newNode = new PersonNode(name);
+
+                    if (first == null) {
+                        first = newNode;
+                    } else {
+                        last.next = newNode;
+                    }
+
+                    last = newNode;
+                    size++;
+                }
+            }
+
+            input.close();
+
+        } catch (FileNotFoundException e) {
+            throw new IllegalArgumentException(
+                "File not found: " + fileName, e
+            );
+        }
+    }
 }
