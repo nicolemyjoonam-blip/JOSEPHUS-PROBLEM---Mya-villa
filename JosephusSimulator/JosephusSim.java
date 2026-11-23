@@ -82,4 +82,41 @@ public class JosephusSim {
             eliminationCount + " ==="
         );
     }
+
+    // find and remove the next person
+    public void eliminate() {
+
+        // stop if only one person is left
+        if (size <= 1) {
+            return;
+        }
+
+        PersonNode current = first;
+        PersonNode previous = first;
+
+        // find the node before first
+        while (previous.next != first) {
+            previous = previous.next;
+        }
+
+        // count to the person being eliminated
+        for (int i = 1; i < eliminationCount; i++) {
+            previous = current;
+            current = current.next;
+        }
+
+        // print who got eliminated
+        System.out.println(
+            current.name + " eliminated!"
+        );
+
+        // remove the person from the circle
+        previous.next = current.next;
+
+        // move first to the next person
+        first = current.next;
+
+        // decrease the number of people left
+        size--;
+    }
 }
